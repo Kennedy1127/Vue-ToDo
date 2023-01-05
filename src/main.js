@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import VueLazyLoad from 'vue3-lazyload';
+import VueLazyload from 'vue-lazyload';
 
 import App from './App.vue';
 import router from './router';
@@ -9,7 +9,7 @@ import '@/style.css';
 
 const app = createApp(App);
 
-app.use(VueLazyLoad);
+app.use(VueLazyload);
 app.use(createPinia());
 app.use(router);
 

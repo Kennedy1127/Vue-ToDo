@@ -1,37 +1,36 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex h-full flex-col items-center">
     <div class="pb-2 desktop-sm:pt-4 desktop-md:pt-5">
-      <GroupImage :sourceImage="mainImage" />
+      <TheGroupDefaultHome :sourceImage="homeImage" :isHome="true" />
     </div>
     <div class="w-1/2 bg-brand-grey-1 pb-0.5"></div>
     <div class="pt-2">
-      <div
-        v-for="group in groups"
-        :key="group.id"
-        class="relative pt-5 first:pt-0"
-      >
+      <div v-for="group in groups" :key="group.id" class="pt-5 first:pt-0">
         <TheGroup
-          :sourceImage="group.imageSrc"
+          :groupImage="group.imageSrc"
           :id="group.id"
           :title="group.title"
         />
       </div>
     </div>
     <div class="pt-5">
-      <div class="relative">
-        <GroupDefault />
-      </div>
+      <TheGroupDefaultAddGroupVue />
+    </div>
+    <div class="mt-auto">
+      <TheGroupDefaultSetting :sourceImage="settingImage" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import TheGroup from '@/components/Home/Groups/TheGroup.vue';
-import GroupImage from '@/components/Home/Groups/GroupImage.vue';
-import GroupDefault from '@/components/Home/Groups/GroupDefault.vue';
+import TheGroup from '@/components/Home/Groups/TheGroup/TheGroup.vue';
+import TheGroupDefaultAddGroupVue from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultAddGroup.vue';
+import TheGroupDefaultHome from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultHome.vue';
+import TheGroupDefaultSetting from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultSetting.vue';
 
-const mainImage = ref('/src/assets/home/smartphone.png');
+const homeImage = ref('/src/assets/home/notebook.png');
+const settingImage = ref('/src/assets/home/settings.png');
 
 const groups = ref([
   {

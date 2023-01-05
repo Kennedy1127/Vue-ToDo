@@ -6,22 +6,26 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:unit": "vitest --environment jsdom --root src/",
+    "test:unit": "vitest --coverage --environment jsdom --root .",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
-    "vue3-lazyload": "^0.3.6"
+    "vue-lazyload": "^3.0.0-rc.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/vue": "^6.6.1",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/coverage-c8": "^0.26.2",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/test-utils": "^2.2.6",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.22.0",
+    "eslint-plugin-vitest-globals": "^1.2.0",
     "eslint-plugin-vue": "^9.3.0",
     "jsdom": "^20.0.3",
     "postcss": "^8.4.20",
