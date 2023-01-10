@@ -1,22 +1,24 @@
 <template>
   <GroupCircleBox class="bg-brand-black-2">
-    <img v-lazy="image" class="h-full w-full object-cover" />
+    <v-lazy-image
+      :src="groupImage"
+      :src-placeholder="loadingImage"
+      class="h-full w-full object-cover"
+      use-picture
+    />
   </GroupCircleBox>
 </template>
 
 <script setup>
 import { ref, inject } from 'vue';
 import GroupCircleBox from '@/components/Home/Groups/GroupCircleBox.vue';
+import VLazyImage from 'v-lazy-image';
 
-// inject
+// inject groupImage
 const groupImage = inject('groupImage');
 //
 
-// image data
-const image = ref({
-  src: groupImage,
-  loading: '/src/assets/loading.gif',
-  error: '/src/assets/home/default.png',
-});
+// loadingImage
+const loadingImage = ref('/src/assets/loading.gif');
 //
 </script>

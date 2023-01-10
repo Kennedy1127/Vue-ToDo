@@ -3,8 +3,12 @@
     <TheGroupDefaultImage
       @mouseenter="hoverGroupImage = true"
       @mouseleave="hoverGroupImage = false"
+      data-testid="TheGroupDefaultImage"
     />
-    <GroupHoverBox v-if="hoverGroupImage && title" />
+    <GroupHoverBox
+      v-if="hoverGroupImage && title"
+      data-testid="GroupHoverBox"
+    />
   </div>
 </template>
 

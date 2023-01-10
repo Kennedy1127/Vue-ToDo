@@ -3,7 +3,9 @@
     <div class="pb-2 desktop-sm:pt-4 desktop-md:pt-5">
       <TheGroupDefaultHome :sourceImage="homeImage" :isHome="true" />
     </div>
-    <div class="w-1/2 bg-brand-grey-1 pb-0.5"></div>
+
+    <div class="w-1/2 bg-brand-grey-1 py-[1px]"></div>
+
     <div class="pt-2">
       <div v-for="group in groups" :key="group.id" class="pt-5 first:pt-0">
         <TheGroup
@@ -13,10 +15,12 @@
         />
       </div>
     </div>
+
     <div class="pt-5">
       <TheGroupDefaultAddGroupVue />
     </div>
-    <div class="mt-auto">
+
+    <div class="mt-auto pt-5">
       <TheGroupDefaultSetting :sourceImage="settingImage" />
     </div>
   </div>

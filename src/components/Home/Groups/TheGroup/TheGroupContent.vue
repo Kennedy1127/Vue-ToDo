@@ -2,8 +2,9 @@
   <TheGroupImage
     @mouseenter="hoverGroupImage = true"
     @mouseleave="hoverGroupImage = false"
+    data-testid="TheGroupImage"
   />
-  <GroupHoverBox v-if="hoverGroupImage" />
+  <GroupHoverBox v-if="hoverGroupImage" data-testid="GroupHoverBox" />
 </template>
 
 <script setup>

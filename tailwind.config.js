@@ -9,6 +9,15 @@ module.exports = {
         'desktop-sm': '1000px',
         'desktop-md': '1300px',
         'desktop-lg': '1500px',
+        'desktop-card-sm': '1000px',
+        'desktop-card-md': '1200px',
+      },
+      height: {
+        'desktop-card-height': '300px',
+      },
+      boxShadow: {
+        'desktop-card-box-shadow': '0 6px 10px -3px rgba(0, 0, 0 , 0.75)',
+        'desktop-card-box-shadow-hover': '0 8px 10px -1px rgba(0, 0, 0 , 0.75)',
       },
       colors: {
         'brand-black-1': '#202020',
@@ -19,6 +28,7 @@ module.exports = {
         'brand-white-1': '#ffffff',
         'brand-blue-1': '#7289da',
         'brand-green-1': '#2ecc71',
+        'brand-card': '#f5ddbc',
       },
       fontFamily: {
         sans: ['Kanit', ...defaultTheme.fontFamily.sans],
