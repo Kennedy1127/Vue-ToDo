@@ -9,8 +9,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import TheGroupImage from '@/components/Home/Groups/TheGroup/TheGroupImage.vue';
-import GroupHoverBox from '@/components/Home/Groups/GroupHoverBox.vue';
+import TheGroupImage from '@/components/Groups/TheGroup/TheGroupImage.vue';
+import GroupHoverBox from '@/components/Groups/GroupHoverBox.vue';
 
 const hoverGroupImage = ref(false);
 </script>

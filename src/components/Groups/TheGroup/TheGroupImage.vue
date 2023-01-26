@@ -11,7 +11,7 @@
 
 <script setup>
 import { ref, inject } from 'vue';
-import GroupCircleBox from '@/components/Home/Groups/GroupCircleBox.vue';
+import GroupCircleBox from '@/components/Groups/GroupCircleBox.vue';
 import VLazyImage from 'v-lazy-image';
 
 // inject groupImage

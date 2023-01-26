@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
-import TheGroupDefaultContent from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultContent.vue';
+import TheGroupDefaultContent from '@/components/Groups/TheGroupDefault/TheGroupDefaultContent.vue';
 
 describe('TheGroupDefaultContent', () => {
   describe('hovers TheGroupDefaultImage', () => {

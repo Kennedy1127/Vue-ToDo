@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
-import TheGroupContent from '@/components/Home/Groups/TheGroup/TheGroupContent.vue';
+import TheGroupContent from '@/components/Groups/TheGroup/TheGroupContent.vue';
 
 describe('TheGroupContent', () => {
   const renderTheGroupContent = () => {

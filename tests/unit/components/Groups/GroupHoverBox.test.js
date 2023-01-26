@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/vue';
-import GroupHoverBox from '@/components/Home/Groups/GroupHoverBox.vue';
+import GroupHoverBox from '@/components/Groups/GroupHoverBox.vue';
 
 describe('GroupHoverBox', () => {
   it('', () => {

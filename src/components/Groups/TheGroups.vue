@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full flex-col items-center">
+  <div class="scrollbar flex h-full flex-col items-center overflow-y-scroll">
     <div class="pb-2 desktop-sm:pt-4 desktop-md:pt-5">
       <TheGroupDefaultHome :sourceImage="homeImage" :isHome="true" />
     </div>
@@ -28,10 +28,10 @@
 
 <script setup>
 import { ref } from 'vue';
-import TheGroup from '@/components/Home/Groups/TheGroup/TheGroup.vue';
-import TheGroupDefaultAddGroupVue from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultAddGroup.vue';
-import TheGroupDefaultHome from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultHome.vue';
-import TheGroupDefaultSetting from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultSetting.vue';
+import TheGroup from '@/components/Groups/TheGroup/TheGroup.vue';
+import TheGroupDefaultAddGroupVue from '@/components/Groups/TheGroupDefault/TheGroupDefaultAddGroup.vue';
+import TheGroupDefaultHome from '@/components/Groups/TheGroupDefault/TheGroupDefaultHome.vue';
+import TheGroupDefaultSetting from '@/components/Groups/TheGroupDefault/TheGroupDefaultSetting.vue';
 
 const homeImage = ref('/src/assets/home/notebook.png');
 const settingImage = ref('/src/assets/home/settings.png');
@@ -70,3 +70,18 @@ const groups = ref([
   },
 ]);
 </script>
+
+<style scoped>
+.scrollbar {
+  box-sizing: content-box;
+  padding-right: 200px;
+  margin-right: -200px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+</style>

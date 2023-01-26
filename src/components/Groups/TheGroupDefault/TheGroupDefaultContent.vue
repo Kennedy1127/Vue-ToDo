@@ -14,8 +14,8 @@
 
 <script setup>
 import { ref, inject } from 'vue';
-import TheGroupDefaultImage from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultImage.vue';
-import GroupHoverBox from '@/components/Home/Groups/GroupHoverBox.vue';
+import TheGroupDefaultImage from '@/components/Groups/TheGroupDefault/TheGroupDefaultImage.vue';
+import GroupHoverBox from '@/components/Groups/GroupHoverBox.vue';
 
 // hover event
 const hoverGroupImage = ref(false);

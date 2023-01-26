@@ -6,17 +6,16 @@
 
 <script setup>
 import { provide } from 'vue';
-import TheGroupDefaultContent from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultContent.vue';
+import TheGroupDefaultContent from '@/components/Groups/TheGroupDefault/TheGroupDefaultContent.vue';
 
 // props
 const props = defineProps({
   sourceImage: {
     type: String,
-    required: false,
+    required: true,
   },
   isHome: {
     type: Boolean,
-    required: false,
     default: false,
   },
 });
@@ -24,7 +23,7 @@ const props = defineProps({
 
 // provide
 provide('sourceImage', props.sourceImage);
-provide('title', 'Create a group');
+provide('title', 'Settings');
 provide('isHome', props.isHome);
 //
 </script>

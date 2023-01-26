@@ -33,7 +33,7 @@
 
 <script setup>
 import { computed, inject, ref } from 'vue';
-import GroupCircleBox from '@/components/Home/Groups/GroupCircleBox.vue';
+import GroupCircleBox from '@/components/Groups/GroupCircleBox.vue';
 
 // inject
 const sourceImage = inject('sourceImage');

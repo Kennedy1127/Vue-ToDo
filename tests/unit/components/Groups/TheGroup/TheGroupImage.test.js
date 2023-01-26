@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/vue';
-import TheGroupImage from '@/components/Home/Groups/TheGroup/TheGroupImage.vue';
+import TheGroupImage from '@/components/Groups/TheGroup/TheGroupImage.vue';
 
 describe('TheGroupImage', () => {
   it('uses v-lazy-image', () => {

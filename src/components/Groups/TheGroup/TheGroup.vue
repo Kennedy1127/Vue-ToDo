@@ -6,7 +6,7 @@
 
 <script setup>
 import { provide } from 'vue';
-import TheGroupContent from '@/components/Home/Groups/TheGroup/TheGroupContent.vue';
+import TheGroupContent from '@/components/Groups/TheGroup/TheGroupContent.vue';
 
 const props = defineProps({
   groupImage: {

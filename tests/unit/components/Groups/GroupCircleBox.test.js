@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/vue';
-import GroupCircleBox from '@/components/Home/Groups/GroupCircleBox.vue';
+import GroupCircleBox from '@/components/Groups/GroupCircleBox.vue';
 
 describe('GroupCircleBox', () => {
   it('renders slot content', () => {

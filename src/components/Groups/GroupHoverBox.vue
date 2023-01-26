@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute top-2 text-brand-grey-2 desktop-sm:left-[100px] desktop-md:left-[130px]"
+    class="absolute top-2 z-10 text-brand-grey-2 desktop-sm:left-[100px] desktop-md:left-[130px]"
   >
     <div
       class="relative w-[140px] max-w-[130px] whitespace-pre-line rounded-lg bg-brand-black-1 py-1.5 px-2 text-base"

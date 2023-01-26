@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
-import TheGroupDefaultImage from '@/components/Home/Groups/TheGroupDefault/TheGroupDefaultImage.vue';
+import TheGroupDefaultImage from '@/components/Groups/TheGroupDefault/TheGroupDefaultImage.vue';
 
 describe('TheGroupDefaultImage', () => {
   const renderTheGroupDefaultImage = (provide = {}) => {
