@@ -2,10 +2,10 @@
   <TheModal @click.self="$emit('cancelDeleteNote')">
     <template #modalConfirm>
       <ModalConfirm :warningSign="warningSign" :warningText="warningText">
-        <ModalButton class="bg-brand-red" @click="$emit('deleteNote')"
+        <ModalButton class="bg-brand-red-1" @click="$emit('deleteNote')"
           >Delete</ModalButton
         >
-        <ModalButton class="bg-brand-green" @click="$emit('cancelDeleteNote')"
+        <ModalButton class="bg-brand-green-1" @click="$emit('cancelDeleteNote')"
           >Cancel</ModalButton
         >
       </ModalConfirm>

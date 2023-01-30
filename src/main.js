@@ -23,9 +23,18 @@ import {
 /* add icons to the library */
 library.add(faXmark, faPlus, faCheck, faTriangleExclamation);
 
-const app = createApp(App);
-app.component('font-awesome-icon', FontAwesomeIcon);
-app.use(createPinia());
-app.use(router);
+import { auth } from '@/firebase/config';
+import { onAuthStateChanged } from 'firebase/auth';
 
-app.mount('#app');
+let app;
+
+onAuthStateChanged(auth, (user) => {
+  console.log(user);
+  if (!app) {
+    app = createApp(App)
+      .component('font-awesome-icon', FontAwesomeIcon)
+      .use(createPinia())
+      .use(router)
+      .mount('#app');
+  }
+});

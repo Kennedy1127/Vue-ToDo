@@ -16,6 +16,7 @@ module.exports = {
         'desktop-note': '300px',
         'desktop-modal': '300px',
         'desktop-create-note': '600px',
+        'desktop-authentication-system': '800px',
       },
       width: {
         'desktop-modal': '450px',
@@ -31,9 +32,10 @@ module.exports = {
         'brand-black-2': '#2c2f33',
         'brand-grey-1': '#888',
         'brand-grey-2': '#ccc',
-        'brand-blue': '#7289da',
-        'brand-green': '#2ecc71',
-        'brand-red': '#ff8d85',
+        'brand-blue-1': '#7289da',
+        'brand-green-1': '#2ecc71',
+        'brand-red-1': '#ff8d85',
+        'brand-red-2': '	#ff3333',
         'brand-yellow': '#FFCC00',
         'brand-note': '#f5ddbc',
         ////////////////////////////////

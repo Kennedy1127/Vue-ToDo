@@ -2,10 +2,10 @@
   <TheModal>
     <template #modalConfirm>
       <ModalConfirm :warningSign="warningSign" :warningText="warningText">
-        <ModalButton class="bg-brand-red" @click="$emit('leave')"
+        <ModalButton class="bg-brand-red-1" @click="$emit('leave')"
           >Leave</ModalButton
         >
-        <ModalButton class="bg-brand-green" @click="$emit('cancelLeave')"
+        <ModalButton class="bg-brand-green-1" @click="$emit('cancelLeave')"
           >Cancel</ModalButton
         >
       </ModalConfirm>

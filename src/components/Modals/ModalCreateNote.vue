@@ -65,6 +65,8 @@
 <script setup>
 import { ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
+import { Timestamp } from '@firebase/firestore';
+import { auth } from '@/firebase/config';
 import TheModal from '@/components/Modals/TheModal.vue';
 
 // emit
@@ -91,14 +93,13 @@ const inputText = ref('Default Content');
 
 // submit
 const handleSubmit = () => {
-  const currentTime = Date.now();
-
   const note = {
     id: uuidv4(),
     title: inputTitle.value,
     date: currentDate.value,
     text: inputText.value,
-    timestamp: currentTime,
+    timestamp: Timestamp.now(),
+    username: auth.currentUser.displayName,
   };
 
   emits('triggerModalConfirmCreateNote', note);

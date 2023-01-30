@@ -10,7 +10,7 @@
         <TheNote
           :id="note.id"
           :title="note.title"
-          :date="note.date"
+          :date="dateConvert(note.timestamp)"
           :text="note.text"
           @triggerModalConfrimDeleteNote="triggerModalConfrimDeleteNote"
         />
@@ -26,22 +26,40 @@
     @cancelDeleteNote="cancelDeleteNote"
   />
   <!-- delete note modal -->
+
+  <!-- modal spinning -->
+  <ModalSpinning v-if="storeUser.isPending" />
+  <!-- modal spinning -->
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { useNotesStore } from '@/stores/storeNotes';
+import { useUserStore } from '@/stores/storeUser';
+import getNotes from '@/composables/getNotes';
 import TheNote from '@/components/Notes/TheNote.vue';
 import ModalConfirmDeleteNote from '@/components/Modals/ModalConfirm/ModalConfirmDeleteNote.vue';
+import ModalSpinning from '@/components/Modals/ModalSpinning.vue';
+import useNotes from '@/composables/useNotes';
 
-// const test = () => console.log('test');
-
-// stores
+// store
 const storeNotes = useNotesStore();
+const storeUser = useUserStore();
 //
 
-// fetch notes
-const notes = computed(() => storeNotes.notes);
+// get notes
+const { notes } = getNotes();
+watchEffect(() => {
+  notes.value
+    ? (storeNotes.updateCurrentNotes(notes.value),
+      storeUser.switchIsPendingMode(false))
+    : storeUser.switchIsPendingMode(true);
+});
+
+const dateConvert = (time) => {
+  const date = new Date(time.seconds * 1000 + time.nanoseconds / 1000000);
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+};
 //
 
 // delete note
@@ -60,8 +78,18 @@ const resetDeleteNote = () => {
 
 const cancelDeleteNote = () => resetDeleteNote();
 
-const deleteNote = () => {
-  storeNotes.deleteNote(selectedDeleteNoteID.value);
+const deleteNote = async () => {
+  const { updateNote } = useNotes();
+  try {
+    const data = storeNotes.currentNotes.filter(
+      (el) => el.id !== selectedDeleteNoteID.value
+    );
+
+    await updateNote({ notes: [...data] });
+  } catch (err) {
+    console.error(err);
+  }
+
   resetDeleteNote();
 };
 //

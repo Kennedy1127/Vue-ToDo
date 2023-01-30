@@ -35,6 +35,7 @@
         @cancelLeave="modalConfirmCancelCreateNoteIsTriggered = false"
       />
     </div>
+    <ModalSignout />
     <!-- Notes -->
   </div>
 </template>
@@ -48,12 +49,12 @@ import ModalCreateNote from '@/components/Modals/ModalCreateNote.vue';
 import ModalCreateNoteButton from '@/components/Modals/ModalCreateNoteButton.vue';
 import ModalConfirmCreateNote from '@/components/Modals/ModalConfirm/ModalConfirmCreateNote.vue';
 import ModalConfirmCancelCreateNote from '@/components/Modals/ModalConfirm/ModalConfirmCancelCreateNote.vue';
+import ModalSignout from '../Modals/ModalSignout.vue';
+import useNotes from '@/composables/useNotes';
 
 // desktop-md:pl-3 desktop-md:pr-2 desktop-sm:pl-3 下拉軸寬12px 所以左邊padding補12px
 
-// const test = () => console.log('test');
-
-// store
+//
 const storeNotes = useNotesStore();
 //
 
@@ -70,12 +71,15 @@ const triggerModalConfirmCreateNote = (submitedNote) => {
 const modalConfirmCreateNoteIsTriggered = ref(false);
 const note = ref(null);
 
-const createNote = () => {
-  if (typeof note.value === 'object') {
-    storeNotes.createNote(note.value);
-    reset();
-    note.value = ref(null);
+const createNote = async () => {
+  const { updateNote } = useNotes();
+
+  try {
+    await updateNote({ notes: [...storeNotes.currentNotes, note.value] });
+  } catch (err) {
+    console.error(err);
   }
+  reset();
 };
 //
 
@@ -91,9 +95,10 @@ const triggerModalCancelCreateNote = (submitedNote) => {
 
 // reset modal
 const reset = () => {
-  modalConfirmCreateNoteIsTriggered.value = false;
   modalConfirmCancelCreateNoteIsTriggered.value = false;
   modalCreateNoteIsTriggered.value = false;
+  modalConfirmCreateNoteIsTriggered.value = false;
+  note.value = ref(null);
 };
 //
 </script>
